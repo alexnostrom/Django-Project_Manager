@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block link %}
+    {% endblock %}
+    {%if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Some page</title>
+    {% endif %}
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>

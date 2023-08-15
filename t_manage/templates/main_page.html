@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="image"><img class="my-img" src="{% static 'image/log1.png' %}" alt="main logo"></div>
+    <div class="header-text">COLLABORATE</div>
+    <div class="under-header">A project management tools for developers</div>
+    <div class="buttons">
+        <a href="{% url 't_manage:signupuser' %}">
+            <button class="my-button">Sign Up</button>
+        </a>
+        <a href="{% url 't_manage:loginuser' %}">
+            <button class="my-button">LogIn</button>
+        </a>
+    </div>
+    <div class="footer">@ 2023 My Basecamp Project</div>
+</div>
+{% endblock %}

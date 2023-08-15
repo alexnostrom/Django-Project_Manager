@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin-top: 0.3%;
+}
+
+.container-first {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-second {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.user-name, .add-proj, .log-out {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.lk {
+    text-decoration: none;
+}
+
+
+.user-name {
+    width: 80%;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+.us-name {
+    color: #4383FF;
+}
+
+.log-out {
+    margin-right: 50px;
+}
+
+.buttons {
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+    background-color: #4071F4;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+    height: 3vh;
+    border: none;
+}
+
+.page-name {
+    font-weight: 700;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+.types-of-prj {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.type-1, .type-2, .type-3 {
+    display: inline-block;
+    background-color: #A7CFED;
+    color: #4383FF;
+    width: 25%;
+    margin: 30px auto 10px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+
+.container-third {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.block-1, .block-2, .block-3 {
+    display: inline-block;
+    width: 25%;
+    margin: 10px auto 10px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+.del {
+    align-self: center;
+    margin-bottom: 10px;
+    color: rgb(26, 26, 26);
+    background-color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 20%;
+    border-radius: 10px;
+    height: 3vh;
+    border: none;
+
+}
+
+.edit {
+    background-color: #5E5694;
+    border-radius: 5px;
+}
+
+.edit-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+}
+
+.proj-name {
+    font-weight: bold;
+    background-color: #999999;
+    color: white;
+}
+
+.proj-full-name {
+    background-color: #999999;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+
+.inner-block {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    margin-bottom: 30px;
+    background-color: #e1e1e1;
+    border-radius: 5px;
+}
+

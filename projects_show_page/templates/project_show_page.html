@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/project_show_page.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-first">
+    <div class="container-second">
+        <div class="user-name">Hello, <span class="us-name">{{ user.username }}</span></div>
+        <div class="add-proj"><a class="lk" href="{% url 'add_and_modify:create_project_page'%}">+Add Project</a></div>
+        <div class="log-out">
+            <form action="{% url 'projects_show_page:logout_user' %}" method="POST">
+                {% csrf_token %}
+                <button class="buttons" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="page-name">Projects</div>
+    <div class="types-of-prj">
+        <div class="type-1">All projects</div>
+        <div class="type-2">Shared with me</div>
+        <div class="type-3">Created by me</div>
+    </div>
+    <div class="container-third">
+
+        <div class="block-1">
+            {% for project in all_projects %}
+            <div class="inner-block">
+                <div class="proj-user-name">Project name:</div>
+                <div class="proj-full-name">{{ project.project_name }}</div>
+                <div class="proj-user-name">Created by {{ project.main_user }}</div>
+                <div class="proj-user-name">Description:</div>
+                <div class="proj-full-descr">{{ project.project_description }}</div>
+                <div class="proj-user-name">Added persons:</div>
+                <div class="proj-full-descr">{{ project.added_user }}</div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="block-2">
+            {% for project in shared_with_me %}
+            <div class="inner-block">
+                <div class="proj-user-name">Project name:</div>
+                <div class="proj-full-name">{{ project.project_name }}</div>
+                <div class="proj-user-name">Created by {{ project.main_user }}</div>
+                <div class="edit"><a class="edit-link"
+                                     href="{% url 'add_and_modify:edit_project_page' project.project_id %}">Edit</a>
+                </div>
+                <div class="proj-user-name">Description:</div>
+                <div class="proj-full-descr">{{ project.project_description }}</div>
+                <div class="proj-user-name">Added persons:</div>
+                <div class="proj-full-descr">{{ project.added_user }}</div>
+                <form action="{% url 'add_and_modify:delete_project' project.project_id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="del">DELETE</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="block-3">
+            {% for project in created_by_me %}
+            <div class="inner-block">
+                <div class="proj-user-name">Project name:</div>
+                <div class="proj-full-name">{{ project.project_name }}</div>
+                <div class="proj-user-name">Created by {{ project.main_user }}</div>
+                <div class="edit"><a class="edit-link"
+                                     href="{% url 'add_and_modify:edit_project_page' project.project_id %}">Edit</a>
+                </div>
+                <div class="proj-user-name">Description:</div>
+                <div class="proj-full-descr">{{ project.project_description }}</div>
+                <form action="{% url 'add_and_modify:delete_project' project.project_id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="del">DELETE</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+    <div class="footer"></div>
+</div>
+{% endblock %}

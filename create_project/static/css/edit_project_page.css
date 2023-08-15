@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+    margin-top: 0.3%;
+}
+
+.container-first {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-second {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+
+}
+
+.user-name, .add-proj, .main-page, .log-out {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 5px;
+    margin-left: 40px;
+}
+
+.lk {
+    text-decoration: none;
+}
+
+
+.user-name {
+    width: 70%;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+.us-name {
+    color: #4383FF;
+}
+
+
+.buttons {
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+    background-color: #4071F4;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+    height: 3vh;
+    border: none;
+}
+
+.page-name {
+    font-weight: 700;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.created {
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.labels {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.my-button {
+    align-self: center;
+    margin: 30px 120px 30px 20px;
+    color: rgb(255, 255, 255);
+    background-color: #4071F4;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 7%;
+    border-radius: 10px;
+    height: 3vh;
+    border: none;
+}
+
+.my-button1 {
+    align-self: center;
+    margin: 30px 120px 30px 20px;
+    color: rgb(255, 255, 255);
+    background-color: #4071F4;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 10%;
+    border-radius: 10px;
+    height: 3vh;
+    border: none;
+}
+
+
+.button-and-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.restore-size {
+    width: 100%;
+}
+
+
+
+.add_project {
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #111362;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 20px 0 20px;
+}
+
+.descrip_project {
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #111362;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 20px 0 20px;
+}
+
+.footer {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 80px auto 10px;
+}

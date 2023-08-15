@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/edit_project_page.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container-first">
+    <div class="container-second">
+        <div class="user-name">Hello, <span class="us-name">{{ user.username }}</span></div>
+        <div class="main-page"><a class="lk" href="{% url 'projects_show_page:project_show_main_page'%}">Main Page</a>
+        </div>
+        <div class="add-proj"><a class="lk" href="{% url 'add_and_modify:create_project_page'%}">+Add Project</a></div>
+        <div class="log-out">
+            <form action="{% url 'projects_show_page:logout_user' %}" method="POST">
+                {% csrf_token %}
+                <button class="buttons" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="page-name">Edit Project</div>
+    <div class="created">created by {{ user.username }}</div>
+    <form class="button-and-input" action="{% url 'add_and_modify:update_name' project_id %}" method="POST">
+        {% csrf_token %}
+        <div class="restore-size">
+            <div class="labels">{{ forms.project_name.label }}</div>
+            <div>{{ forms.project_name }}</div>
+        </div>
+        <button class="my-button">Update Name</button>
+    </form>
+    <form class="button-and-input" action="{% url 'add_and_modify:update_description' project_id %}" method="POST">
+        {% csrf_token %}
+        <div class="restore-size">
+            <div class="labels">{{ forms.project_description.label }}</div>
+            <div>{{ forms.project_description }}</div>
+        </div>
+        <button class="my-button1">Update Description</button>
+    </form>
+    <form class="button-and-input" action="{% url 'add_and_modify:add_email_to_project' project_id %}" method="POST">
+        {% csrf_token %}
+        <div class="restore-size">
+            <div class="labels">{{ forms.user_email.label }}</div>
+            <div>{{ forms.user_email }}</div>
+        </div>
+        <button class="my-button">Invite User</button>
+    </form>
+    <div class="footer">@ 2023 My Basecamp Project</div>
+</div>
+{% endblock %}

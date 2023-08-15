@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/add_project_page.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="container-first">
+    <div class="container-second">
+        <div class="user-name">Hello, <span class="us-name">{{ user.username }}</span></div>
+        <div class="main-page"><a class="lk" href="{% url 'projects_show_page:project_show_main_page'%}">Main Page</a></div>
+        <div class="add-proj"><a class="lk" href="{% url 'add_and_modify:create_project_page'%}">+Add Project</a></div>
+        <div class="log-out">
+            <form action="{% url 'projects_show_page:logout_user' %}" method="POST">
+                {% csrf_token %}
+                <button class="buttons" type="submit">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div class="page-name">New Project</div>
+     <form action="{% url 'add_and_modify:create_project_page' %}" method="POST">
+            {% csrf_token %}
+            {{ error }}
+            <div class="labels">{{ forms.project_name.label }}</div>
+            <div>{{ forms.project_name }}</div>
+            <div class="labels">{{ forms.description.label }}</div>
+            <div>{{ forms.description }}</div>
+            <button class="my-button">Create Project</button>
+
+        </form>
+    <div class="footer">@ 2023 My Basecamp Project</div>
+</div>
+{% endblock %}

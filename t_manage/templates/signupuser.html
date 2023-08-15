@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/register_user.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="image"><img class="my-img" src="{% static 'image/log1.png' %}" alt="main logo"></div>
+    <div class="register-form">
+        <h1>Register Form</h1>
+        <form action="{% url 't_manage:signupuser' %}" method="POST">
+            {% csrf_token %}
+            <p class="error">{{ error }}</p>
+            {% for form in forms %}
+            <p>{{ form }}</p>
+            {% endfor %}
+            <p>Have an account? <a class="letter-link" href="{% url 't_manage:loginuser' %}">Login </a></p>
+            <button class="my-button">Register</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
